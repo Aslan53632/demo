@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Сти — Автосервис, Краснодар</title>
+<meta name="description" content="Легковой автосервис · Ремонт дизельных двигателей · Ремонт бензиновых двигателей · Ремонт ходовой части автомобиля. Обрывная улица, 131/1т.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090a0c;--panel:#131519;--panel2:#191c21;--line:#262a31;--text:#f3f4f6;--mute:#8e949f;--acc:#d7ff3e;--ink:#0a0b0d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font:400 16px/1.55 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.demo{background:var(--acc);color:var(--ink);font-size:13px;font-weight:600;text-align:center;padding:7px 16px}
+.top{position:sticky;top:0;z-index:20;background:rgba(9,10,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+header{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0}
+.logo{font:800 18px Unbounded,sans-serif;letter-spacing:.02em;display:flex;align-items:center;gap:10px;min-width:0;max-width:min(440px,62vw)}
+.logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.logo::before{flex:none}
+.logo::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px var(--acc)}
+nav{display:flex;gap:28px;font-size:14px;color:var(--mute)}
+nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 26px;border-radius:14px;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:transform .18s,box-shadow .18s,border-color .18s}
+.btn:hover{transform:translateY(-2px);border-color:#3a3f48}
+.btn.pri{background:var(--acc);color:var(--ink);border-color:var(--acc);box-shadow:0 10px 34px rgba(215,255,62,.22)}
+.btn.pri:hover{box-shadow:0 14px 44px rgba(215,255,62,.34)}
+.btn.sm{padding:10px 18px;border-radius:11px;font-size:14px}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:56px 0 72px}
+.kicker.award{color:var(--acc);border-color:rgba(215,255,62,.35)}
+.kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;color:#c5cad2;margin-bottom:24px;background:var(--panel)}
+h1{font:800 96px/.98 Unbounded,sans-serif;font-size:min(96px,calc(540px / (.7 * var(--w))),calc((100vw - 40px) / (.7 * var(--w))));letter-spacing:-.03em;margin-bottom:24px;overflow-wrap:break-word}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{font-size:clamp(17px,1.9vw,21px);color:#c5cad2;max-width:520px;margin-bottom:32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;color:var(--mute);font-size:14px}
+.trust b{display:block;color:var(--text);font-size:16px;font-weight:600}
+.photo{position:relative;aspect-ratio:4/5;max-height:600px;justify-self:end;width:100%}
+.photo .frame{position:absolute;inset:0;border-radius:32px;overflow:hidden;border:1px solid var(--line)}
+.photo .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(9,10,12,.75))}
+.photo::before{content:"";position:absolute;inset:-60px;background:radial-gradient(circle at 60% 40%,rgba(215,255,62,.20),transparent 60%);filter:blur(20px);z-index:-1}
+.badge{position:absolute;left:-22px;bottom:34px;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:16px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.badge b{font:800 34px/1 Unbounded,sans-serif;color:var(--acc)}
+.badge small{display:block;color:var(--mute);font-size:12px}
+.stars{color:var(--acc);letter-spacing:2px;font-size:15px}
+.chip{position:absolute;right:18px;top:18px;background:rgba(9,10,12,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:8px 14px;font-size:13px;font-weight:600}
+
+.ticker{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--panel)}
+.ticker div{display:flex;gap:44px;width:max-content;animation:run 38s linear infinite}
+.ticker span{font:500 15px Unbounded,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:#aeb4be;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.ticker span::after{content:"✦";color:var(--acc)}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{padding:84px 0}
+.shead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.eyebrow{font:500 13px Unbounded,sans-serif;color:var(--acc);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+h2{font:700 clamp(28px,4.4vw,48px)/1.05 Unbounded,sans-serif;letter-spacing:-.02em}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+.group{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:24px;padding:26px}
+.ghead{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+.num{font:700 13px Unbounded,sans-serif;color:var(--acc)}
+.group h3{font:700 19px Unbounded,sans-serif}
+.group ul{list-style:none;padding:0}
+.group li{display:flex;gap:10px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.group li:last-child{border:0;padding-bottom:0}
+.group li i{flex:1;border-bottom:1px dotted #3a3f48;min-width:12px;transform:translateY(-4px)}
+.sname{display:block;font-weight:600}
+.snote{display:block;color:var(--mute);font-size:13px}
+.price{white-space:nowrap;font-weight:700;color:var(--acc)}
+.fine{color:var(--mute);font-size:13px;margin-top:18px}
+
+.gallery{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px}
+.gallery figure{position:relative;border-radius:24px;overflow:hidden;height:340px;border:1px solid var(--line)}
+.gallery img{transition:transform .6s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;left:16px;bottom:16px;background:rgba(9,10,12,.7);backdrop-filter:blur(8px);border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600}
+
+.revgrid{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+.score{background:var(--acc);color:var(--ink);border-radius:24px;padding:28px;position:sticky;top:90px}
+.score b{font:800 84px/1 Unbounded,sans-serif;display:block;letter-spacing:-.04em}
+.score .stars{color:var(--ink);font-size:20px}
+.score p{margin:10px 0 22px;font-weight:600}
+.score .btn{background:var(--ink);color:var(--text);border-color:var(--ink);width:100%}
+.reviews{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.review{display:flex;flex-direction:column;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px;transition:transform .18s,border-color .18s,background .18s}
+.review:hover{transform:translateY(-4px);border-color:var(--acc);background:var(--panel2)}
+.review p{font-size:16px;color:#dfe2e7;flex:1}
+.who{display:flex;align-items:center;gap:10px}
+.ava{width:38px;height:38px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-weight:700;color:var(--acc);flex:none}
+.who b{display:block;font-size:14px}
+.who small{color:var(--mute);font-size:12px}
+.go{margin-left:auto;font-size:12px;color:var(--mute);white-space:nowrap}
+.review:hover .go{color:var(--acc)}
+
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px}
+.card h3{font-size:12px;color:var(--mute);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.card p{font-size:20px;font-weight:700}
+.card small{display:block;color:var(--mute);font-size:14px;font-weight:400;margin-top:4px}
+.card .btn{margin-top:20px}
+.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row span{color:var(--mute)}
+.pay{display:flex;flex-wrap:wrap;gap:8px}
+.pay span{border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:13px;color:#c5cad2}
+.final{margin:0 20px 40px;border-radius:36px;background:radial-gradient(circle at 80% 0,rgba(215,255,62,.22),transparent 55%),var(--panel);border:1px solid var(--line);text-align:center;padding:84px 20px}
+.final h2{margin-bottom:14px}
+.final p{color:#c5cad2;margin:0 auto 30px;max-width:460px}
+.final .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-size:13px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.ticker div{animation:none}}
+@media(max-width:900px){
+  nav{display:none}
+  .hero{grid-template-columns:1fr;gap:36px;padding:36px 0 56px}
+  .photo{aspect-ratio:4/3;justify-self:stretch}
+  .badge{left:14px;bottom:14px}
+  .gallery{grid-template-columns:1fr 1fr}.gallery figure{height:220px}.gallery figure:first-child{grid-column:1/-1}
+  .revgrid{grid-template-columns:1fr}.score{position:static}
+  section{padding:60px 0}
+}
+@media(max-width:520px){.hero .btn{flex:1 1 100%}.top .btn{display:none}.go{display:none}.final{margin:0 12px 28px;padding:56px 16px}}
+</style>
+</head>
+<body>
+<div class="demo">Демо-версия сайта для «Сти» — данные взяты из карточки компании в 2ГИС</div>
+<div class="top"><div class="wrap">
+  <header>
+    <a class="logo" href="#top" title="Сти"><span>Сти</span></a>
+    <nav><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    <a class="btn pri sm" href="https://t.me/+79284003131">Записаться</a>
+  </header>
+</div></div>
+
+<div class="wrap">
+  <div class="hero" id="top">
+    <div>
+      <span class="kicker">Автосервис · Краснодар</span>
+      <h1 style="--w:4">Сти<em>.</em></h1>
+      <p class="lead">Легковой автосервис · Ремонт дизельных двигателей · Ремонт бензиновых двигателей · Ремонт ходовой части автомобиля</p>
+      <div class="cta">
+        <a class="btn pri" href="https://t.me/+79284003131">Записаться в Telegram</a>
+        <a class="btn" href="tel:+79284003131">+7 928 400-31-31</a>
+      </div>
+      <div class="trust">
+        <div><b>Обрывная улица, 131/1т</b>Краснодар</div>
+        <div><b>09:00–19:00</b>Пн — Сб</div>
+      </div>
+    </div>
+    <div class="photo">
+      <div class="frame"><img src="../img/1485291571150-772bcfc10da5.jpg" alt="Автомобиль в боксе"></div>
+      <span class="chip">Пн — Сб · 09:00–19:00</span>
+      <a class="badge" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener"><b>4.7</b><div><span class="stars" aria-hidden="true">★★★★★</span><small>43 оценки · 34 отзыва в 2ГИС</small></div></a>
+    </div>
+  </div>
+</div>
+
+<section id="services"><div class="wrap">
+  <div class="shead"><div><p class="eyebrow">Услуги</p><h2>Услуги</h2></div><a class="btn" href="https://t.me/+79284003131">Записаться в Telegram</a></div>
+  <div class="groups">
+      <div class="group reveal">
+        <div class="ghead"><span class="num">01</span><h3>Кузовной ремонт</h3></div>
+        <ul>
+          <li><div><span class="sname">Восстановление геометрии</span></div></li>
+          <li><div><span class="sname">Покраска</span></div></li>
+          <li><div><span class="sname">Полировка</span></div></li>
+          <li><div><span class="sname">Ремонт вмятин</span></div></li>
+          <li><div><span class="sname">Сварка</span></div></li>
+        </ul>
+      </div>
+      <div class="group reveal">
+        <div class="ghead"><span class="num">02</span><h3>Ремонт ходовой части автомобиля</h3></div>
+        <ul>
+          <li><div><span class="sname">Ремонт пневмоподвески</span></div></li>
+          <li><div><span class="sname">Ремонт стоек</span></div></li>
+          <li><div><span class="sname">Проточка тормозных дисков</span></div></li>
+        </ul>
+      </div>
+      <div class="group reveal">
+        <div class="ghead"><span class="num">03</span><h3>Ремонт двигателей</h3></div>
+        <ul>
+          <li><div><span class="sname">Шлифовка</span></div></li>
+          <li><div><span class="sname">Расточка</span></div></li>
+          <li><div><span class="sname">Гильзовка</span></div></li>
+          <li><div><span class="sname">Опрессовка</span></div></li>
+        </ul>
+      </div>
+  </div>
+  <p class="fine">Перечень услуг из карточки компании в 2ГИС.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="gallery">
+    <figure class="reveal"><img loading="lazy" src="../img/1780558852670-3f49298ecc1f.jpg" alt="Полировка кузова"><figcaption>Полировка кузова</figcaption></figure>
+    <figure class="reveal"><img loading="lazy" src="../img/1708805282683-50a060eba80f.jpg" alt="Работа с деталями"><figcaption>Работа с деталями</figcaption></figure>
+    <figure class="reveal"><img loading="lazy" src="../img/1605437241278-c1806d14a4d9.jpg" alt="Уход за салоном"><figcaption>Уход за салоном</figcaption></figure>
+  </div>
+  <p class="fine">Фото иллюстративные. В готовом сайте здесь будут ваши работы.</p>
+</div></section>
+
+<section id="reviews" style="padding-top:0"><div class="wrap">
+  <div class="shead"><div><p class="eyebrow">Отзывы</p><h2>Что пишут клиенты</h2></div></div>
+  <div class="revgrid">
+    <div class="score reveal">
+      <b>4.7</b><span class="stars" aria-hidden="true">★★★★★</span>
+      <p>43 оценки · 34 отзыва<br>в 2ГИС</p>
+      <a class="btn" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">Все отзывы →</a>
+    </div>
+    <div class="reviews">
+      <a class="review reveal" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Сервис топ уровня, быстро и качественно, сделали как для себя, проконсультировали по недоточетам автомобиля, дали рекомендации за что им огромное спасибо!</p>
+        <div class="who"><span class="ava">А</span><div><b>Антон</b><small>7 марта 2026</small></div><span class="go">Читать в 2ГИС →</span></div>
+      </a>
+      <a class="review reveal" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Хороший автосервис, работой доволен. В помещении чисто. Запчасти заказали, все пришло в течении часа и быстро поменяли. 👍</p>
+        <div class="who"><span class="ava">b</span><div><b>balu</b><small>19 апреля 2025</small></div><span class="go">Читать в 2ГИС →</span></div>
+      </a>
+      <a class="review reveal" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Обратилась в сервис с установкой усилителя руля на ВАЗ 2112, Сделали быстро и качественно, я в восторге от сервиса. Качество на высоте. Рекомендую</p>
+        <div class="who"><span class="ava">А</span><div><b>Анжелика</b><small>5 августа 2026</small></div><span class="go">Читать в 2ГИС →</span></div>
+      </a>
+      <a class="review reveal" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Это лучшая автомастерская в городе, делали ремонт двигателя во первых быстро чисто и качественно, в сем рекомендую. Также здесь устанавливали фаркоп с проводкой</p>
+        <div class="who"><span class="ava">Д</span><div><b>Денис</b><small>18 марта 2025</small></div><span class="go">Читать в 2ГИС →</span></div>
+      </a>
+      <a class="review reveal" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Обратилась к ребятам в этот сервис сразу после покупки автомобиля.</p>
+        <div class="who"><span class="ava">Ю</span><div><b>Юлия</b><small>18 января 2025</small></div><span class="go">Читать в 2ГИС →</span></div>
+      </a>
+      <a class="review reveal" href="https://2gis.ru/krasnodar/firm/3237490513259447/tab/reviews" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Я в полном восторге от этой автомастерской 😍✨ Честно, давно не встречала такого отношения — всё объяснили, показали, успокоили (а я та ещё паникёрша, когда дело касается машины 😅).</p>
+        <div class="who"><span class="ava">А</span><div><b>Анастасия</b><small>23 марта 2026</small></div><span class="go">Читать в 2ГИС →</span></div>
+      </a>
+    </div>
+  </div>
+  <p class="fine">Фрагменты отзывов из 2ГИС. Оригинал открывается по клику на карточку.</p>
+</div></section>
+
+<section id="contacts" style="padding-top:0"><div class="wrap">
+  <div class="shead"><div><p class="eyebrow">Контакты</p><h2>Как нас найти</h2></div></div>
+  <div class="contacts">
+    <div class="card reveal">
+      <h3>Адрес</h3>
+      <p>Обрывная улица, 131/1т<small>Краснодар</small></p>
+      <a class="btn" href="https://2gis.ru/krasnodar/firm/3237490513259447" target="_blank" rel="noopener">Открыть на карте</a>
+    </div>
+    <div class="card reveal"><h3>Режим работы</h3><div class="row"><span>Пн — Сб</span><b>09:00–19:00</b></div><div class="row"><span>Воскресенье</span><b>Выходной</b></div></div>
+    <div class="card reveal">
+      <h3>Связь</h3>
+      <p><a href="tel:+79284003131">+7 928 400-31-31</a></p>
+      
+      <h3 style="margin-top:22px">Оплата</h3><div class="pay"><span>Оплата картой</span><span>Наличный расчёт</span><span>Оплата через банк</span><span>Перевод с карты</span><span>Оплата по QR-коду</span></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="final reveal">
+  <p class="eyebrow">Запись</p>
+  <h2>Запишитесь на осмотр</h2>
+  <p>Напишите или позвоните — подберём время и назовём стоимость под ваш автомобиль.</p>
+  <div class="cta">
+    <a class="btn pri" href="https://t.me/+79284003131">Написать в Telegram</a>
+    <a class="btn" href="tel:+79284003131">Позвонить</a>
+  </div>
+</div>
+
+<footer><div class="wrap">© 2026 Сти · Обрывная улица, 131/1т, Краснодар</div></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
